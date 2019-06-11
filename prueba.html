@@ -1,0 +1,29 @@
+<script>
+        var ancho=800  //Puedes cambiar ésto
+        var alto=600  //Puedes cambiar ésto
+        </script>
+        <form action="tu upload.php" enctype="multipart/form-data" method=post onsubmit="return checar()" name=formulario>
+        Seleccione la imagen a subir:
+        <input type=file name=img><br>
+        <input type=submit value="subir imagen">
+        </form>
+        <img id="imagen">
+         
+        <script>
+        function checar(){
+        var imagen=document.getElementById("imagen");
+        imagen.src=document.forms["formulario"].img.value;
+        //alert(imagen.width+" "+imagen.height);
+        if(imagen.width==ancho){
+        if(imagen.height==alto){
+        return true;
+        }else{
+        alert("El alto de la imágen no es correcto");
+        return false;
+        }}else{
+        alert("El ancho de la imágen no es correcto");
+        return false;
+        }
+        return false;
+        }
+        </script>
